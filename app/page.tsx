@@ -1,15 +1,10 @@
 'use client'
-import Link from 'next/link'
 import Image from 'next/image'
+import { useState } from 'react'
 import styles from './page.module.css'
 
 export default function Home() {
-  const handleDownloadResume = () => {
-    const link = document.createElement('a')
-    link.href = '/Neil_Israni_Resume_2026.pdf'
-    link.download = 'Neil_Israni_Resume_2026.pdf'
-    link.click()
-  }
+  const [isResumeExpanded, setIsResumeExpanded] = useState(false)
 
   return (
     <main className={styles.main}>
@@ -18,7 +13,7 @@ export default function Home() {
           <h1 className={styles.name}>Neil Israni</h1>
           <h1 className={styles.description}>Backend Software Engineer and Data Engineer</h1>
         </div>
-        <div className={styles.profileImageContainer}>
+        <div className={styles.profileSection}>
           <Image
             src="/person.jpeg"
             alt="Neil Israni"
@@ -26,10 +21,23 @@ export default function Home() {
             height={200}
             className={styles.profileImage}
           />
+          <button
+            onClick={() => setIsResumeExpanded(!isResumeExpanded)}
+            className={styles.resumeToggle}
+          >
+            {isResumeExpanded ? 'Hide' : 'Resume'}
+          </button>
+          {isResumeExpanded && (
+            <div className={styles.resumeViewer}>
+              <iframe
+                src="/Neil_Israni_Resume_Vanguard.pdf"
+                className={styles.resumeIframe}
+                title="Neil Israni Resume"
+              />
+            </div>
+          )}
         </div>
       </div>
-
-      <h2 className={styles.subtitle}>Past Experiences</h2>
 
       <section className={styles.experiencesSection}>
         {/* Chloris Geospatial Experience */}
@@ -88,23 +96,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <div className={styles.bottomButtons}>
-        <Link href="/personal" className={styles.button}>
-          Personal
-        </Link>
-        <a
-          href="https://www.linkedin.com/in/neil-israni/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.button}
-        >
-          LinkedIn
-        </a>
-        <button onClick={handleDownloadResume} className={styles.button}>
-          Download Resume
-        </button>
-      </div>
     </main>
   )
 }
