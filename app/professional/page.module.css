@@ -9,7 +9,7 @@
 }
 
 .container {
-  max-width: 800px;
+  max-width: 1000px;
   width: 100%;
 }
 
@@ -26,6 +26,83 @@
   opacity: 0.9;
 }
 
+.experiencesSection {
+  margin: 3rem 0;
+  width: 100%;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  text-align: left;
+}
+
+.experienceBox {
+  position: relative;
+  border: 3px solid #000;
+  border-radius: 12px;
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+  min-height: 300px;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.experienceBox:hover {
+  border-color: #333;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.companyLogo {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.logoImage {
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.content {
+  text-align: left;
+  max-width: 65%;
+  padding-right: 100px;
+}
+
+.experienceTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #000;
+}
+
+.descriptionList {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin: 0;
+}
+
+.descriptionList li {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.projectImage {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
+.bottomImage {
+  border-radius: 8px;
+  object-fit: contain;
+}
+
 .backButton {
   display: inline-block;
   padding: 0.75rem 2rem;
@@ -37,6 +114,7 @@
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
   cursor: pointer;
+  margin-top: 2rem;
 }
 
 .backButton:hover {
@@ -52,6 +130,35 @@
 
   .subtitle {
     font-size: 1.25rem;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .experienceBox {
+    padding: 2rem 1.5rem 6rem 1.5rem;
+    min-height: 350px;
+  }
+
+  .content {
+    max-width: 100%;
+    padding-right: 0;
+  }
+
+  .experienceTitle {
+    font-size: 1.5rem;
+    padding-right: 100px;
+  }
+
+  .companyLogo {
+    top: 15px;
+    right: 15px;
+  }
+
+  .projectImage {
+    bottom: 15px;
+    left: 15px;
   }
 }
 

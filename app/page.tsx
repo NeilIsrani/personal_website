@@ -4,17 +4,6 @@ import Image from 'next/image'
 import styles from './page.module.css'
 
 export default function Home() {
-  const experiences = [
-    {
-      image: '/chlor.png',
-      label: 'Software Engineering Intern at Chloris Geospatial'
-    },
-    {
-      image: '/lank.png',
-      label: 'Research Assistant at Lankenau Medical Center'
-    }
-  ]
-
   const handleDownloadResume = () => {
     const link = document.createElement('a')
     link.href = '/Neil_Israni_Resume_2026.pdf'
@@ -24,35 +13,89 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      <h1 className={styles.name}>Neil Israni</h1>
-      <h1 className={styles.description}>Software and Data Engineer</h1>
-      <h1 className={styles.domain}>Geospatial and Biomedical Sciences</h1>
-      
-      <h2 className={styles.subtitle}>Past Experiences</h2>
-      
-      <div className={styles.experiencesContainer}>
-        {experiences.map((experience, index) => (
-          <div key={index} className={styles.experienceCard}>
-            <Image
-              src={experience.image}
-              alt={experience.label}
-              width={400}
-              height={300}
-              className={styles.experienceImage}
-              priority
-            />
-            <p className={styles.imageLabel}>{experience.label}</p>
-          </div>
-        ))}
+      <div className={styles.header}>
+        <div className={styles.headerText}>
+          <h1 className={styles.name}>Neil Israni</h1>
+          <h1 className={styles.description}>Backend Software Engineer and Data Engineer</h1>
+        </div>
+        <div className={styles.profileImageContainer}>
+          <Image
+            src="/person.jpeg"
+            alt="Neil Israni"
+            width={200}
+            height={200}
+            className={styles.profileImage}
+          />
+        </div>
       </div>
+
+      <h2 className={styles.subtitle}>Past Experiences</h2>
+
+      <section className={styles.experiencesSection}>
+        {/* Chloris Geospatial Experience */}
+        <div className={styles.experienceBox}>
+          <div className={styles.companyLogo}>
+            <Image
+              src="/chlor.png"
+              alt="Chloris Geospatial"
+              width={320}
+              height={320}
+              className={styles.logoImage}
+            />
+          </div>
+          <div className={styles.content}>
+            <h3 className={styles.experienceTitle}>Chloris Geospatial</h3>
+            <ul className={styles.descriptionList}>
+              <li>Built backend software and tools for carbon data products</li>
+            </ul>
+          </div>
+          <div className={styles.projectImage}>
+            <Image
+              src="/pipelines.png"
+              alt="Pipelines Project"
+              width={200}
+              height={200}
+              className={styles.bottomImage}
+            />
+          </div>
+        </div>
+
+        {/* Lankenau Experience */}
+        <div className={styles.experienceBox}>
+          <div className={styles.companyLogo}>
+            <Image
+              src="/lank.png"
+              alt="Lankenau"
+              width={320}
+              height={384}
+              className={styles.logoImage}
+            />
+          </div>
+          <div className={styles.content}>
+            <h3 className={styles.experienceTitle}>Lankenau Medical Center</h3>
+            <ul className={styles.descriptionList}>
+              <li>Researched antibody-based therapies for autoimmune diseases</li>
+            </ul>
+          </div>
+          <div className={styles.projectImage}>
+            <Image
+              src="/bioart.png"
+              alt="Bioart Project"
+              width={200}
+              height={200}
+              className={styles.bottomImage}
+            />
+          </div>
+        </div>
+      </section>
 
       <div className={styles.bottomButtons}>
         <Link href="/personal" className={styles.button}>
           Personal
         </Link>
-        <a 
-          href="https://www.linkedin.com/in/neil-israni/" 
-          target="_blank" 
+        <a
+          href="https://www.linkedin.com/in/neil-israni/"
+          target="_blank"
           rel="noopener noreferrer"
           className={styles.button}
         >

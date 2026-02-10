@@ -8,10 +8,28 @@
   text-align: center;
   gap: 2rem;
 }
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 2rem;
+}
+
+.headerText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
 .name {
   font-size: 4rem;
   font-weight: 700;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   letter-spacing: -0.02em;
   background: linear-gradient(135deg, #fff 0%, #e0e0e0 100%);
   -webkit-background-clip: text;
@@ -22,23 +40,18 @@
 .description {
   font-size: 2rem;
   font-weight: 500;
-  margin-bottom: 1rem;
   letter-spacing: -0.02em;
-  background: linear-gradient(135deg, #fff 0%, #e0e0e0 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #000;
 }
 
-.domain {
-  font-size: 2rem;
-  font-weight: 500;
-  margin-bottom: 2rem;
-  letter-spacing: -0.02em;
-  background: linear-gradient(135deg, #fff 0%, #e0e0e0 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: black;
-  background-clip: text;
+.profileImageContainer {
+  flex-shrink: 0;
+}
+
+.profileImage {
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #000;
 }
 
 .buttonContainer {
@@ -71,55 +84,86 @@
 .subtitle {
   font-size: 2.5rem;
   font-weight: 600;
-  margin: 2rem 0 1.5rem 0;
+  margin: 0.6rem 0 1.5rem 0;
   letter-spacing: -0.02em;
   background: linear-gradient(135deg, #fff 0%, #e0e0e0 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-decoration: underline;
+  text-decoration-color: #fff;
+  text-underline-offset: 8px;
 }
 
-.experiencesContainer {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  align-items: flex-start;
-  flex-wrap: wrap;
+.experiencesSection {
+  margin: 2rem 0;
   width: 100%;
   max-width: 1200px;
-  margin: 1rem 0;
 }
 
-.experienceCard {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  flex: 1;
-  min-width: 300px;
-  max-width: 500px;
-}
-
-.experienceImage {
-  width: 100%;
-  height: auto;
-  max-width: 500px;
-  max-height: 400px;
-  object-fit: contain;
+.experienceBox {
+  position: relative;
+  border: 3px solid #000;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  padding: 3rem;
+  margin-bottom: 2.5rem;
+  min-height: 500px;
+  background: transparent;
+  transition: all 0.3s ease;
 }
 
-.imageLabel {
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: #fff;
-  text-align: center;
-  padding: 0.75rem 1.5rem;
-  background: rgba(255, 255, 255, 0.15);
+.experienceBox:hover {
+  border-color: #333;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.companyLogo {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+.logoImage {
   border-radius: 8px;
-  backdrop-filter: blur(10px);
-  width: 100%;
+  object-fit: contain;
+}
+
+.content {
+  text-align: left;
+  max-width: 72%;
+  padding-right: 120px;
+}
+
+.experienceTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #000;
+}
+
+.descriptionList {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin: 0;
+}
+
+.descriptionList li {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.projectImage {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+}
+
+.bottomImage {
+  border-radius: 8px;
+  object-fit: contain;
 }
 
 .bottomButtons {
@@ -133,17 +177,28 @@
 }
 
 @media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .headerText {
+    align-items: center;
+    text-align: center;
+  }
+
   .name {
     font-size: 2.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   .description {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 
-  .domain {
-    font-size: 1.5rem;
+  .profileImage {
+    width: 150px;
+    height: 150px;
   }
 
   .subtitle {
@@ -160,25 +215,33 @@
     gap: 1.5rem;
   }
 
-  .experiencesContainer {
-    flex-direction: column;
-    gap: 2rem;
-    align-items: center;
+  .experienceBox {
+    padding: 2rem 1.5rem 6rem 1.5rem;
+    min-height: 400px;
   }
 
-  .experienceCard {
+  .content {
     max-width: 100%;
-    min-width: auto;
+    padding-right: 0;
   }
 
-  .experienceImage {
-    max-width: 100%;
-    max-height: 300px;
+  .experienceTitle {
+    font-size: 1.5rem;
+    padding-right: 100px;
   }
 
-  .imageLabel {
+  .companyLogo {
+    top: 15px;
+    right: 15px;
+  }
+
+  .projectImage {
+    bottom: 15px;
+    left: 15px;
+  }
+
+  .descriptionList li {
     font-size: 1rem;
-    padding: 0.5rem 1rem;
   }
 }
 
