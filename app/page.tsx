@@ -72,7 +72,7 @@ export default function Home() {
             />
           </div>
           <div className={styles.content}>
-            <h3 className={styles.experienceTitle}>Lankenau Medical Center</h3>
+            <h3 className={styles.experienceTitle}>Lankenau Institute for Medical Research</h3>
             <ul className={styles.descriptionList}>
               <li>Researched antibody-based therapies for autoimmune diseases</li>
             </ul>

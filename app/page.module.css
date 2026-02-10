@@ -86,13 +86,10 @@
   font-weight: 600;
   margin: 0.6rem 0 1.5rem 0;
   letter-spacing: -0.02em;
-  background: linear-gradient(135deg, #fff 0%, #e0e0e0 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-decoration: underline;
-  text-decoration-color: #fff;
-  text-underline-offset: 8px;
+  color: #888;
+  width: 100%;
+  max-width: 1200px;
+  text-align: left;
 }
 
 .experiencesSection {
