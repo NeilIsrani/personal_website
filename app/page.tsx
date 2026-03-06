@@ -1,10 +1,8 @@
 'use client'
 import Image from 'next/image'
-import { useState } from 'react'
 import styles from './page.module.css'
 
 export default function Home() {
-  const [isResumeExpanded, setIsResumeExpanded] = useState(false)
 
   return (
     <main className={styles.main}>
@@ -21,21 +19,6 @@ export default function Home() {
             height={200}
             className={styles.profileImage}
           />
-          <button
-            onClick={() => setIsResumeExpanded(!isResumeExpanded)}
-            className={styles.resumeToggle}
-          >
-            {isResumeExpanded ? 'Hide' : 'Resume'}
-          </button>
-          {isResumeExpanded && (
-            <div className={styles.resumeViewer}>
-              <iframe
-                src="/Neil_Israni_Resume_Vanguard.pdf"
-                className={styles.resumeIframe}
-                title="Neil Israni Resume"
-              />
-            </div>
-          )}
         </div>
       </div>
 
